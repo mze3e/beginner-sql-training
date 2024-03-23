@@ -110,7 +110,7 @@ with st.form(key='query_form'):
 
 
 tables = run_query("SELECT table_name FROM information_schema.tables order by table_name;")
-col1, col2 = st.columns([1, 2])
+col0, col1, col2 = st.columns([2, 1, 2])
 # Display the tables and their columns in the database with st.expander
 
 if tables.shape[0] == 0:
@@ -118,6 +118,17 @@ if tables.shape[0] == 0:
     with st.spinner("Resetting database..."):
         reset_database()
     st.rerun()
+
+with col0:
+    # Display instructions or documentation to the user
+    st.markdown("""
+    ## Instructions
+    - Use the SQL editor above to write and execute your SQL queries.
+    - Select from the dropdown for example queries.
+    - Click **Run Query** to execute your SQL and see the results.
+    - If you make a mistake or want to start over, click **Reset Database**.
+    """)
+
 
 col1.markdown("## Tables")
 with col1:
@@ -140,15 +151,6 @@ with col2:
                                 FROM information_schema.columns
                                 WHERE table_name = '{row['table_name']}';""")
             st.dataframe(columns, hide_index=True)
-
-# Display instructions or documentation to the user
-st.markdown("""
-## Instructions
-- Use the SQL editor above to write and execute your SQL queries.
-- Select from the dropdown for example queries.
-- Click **Run Query** to execute your SQL and see the results.
-- If you make a mistake or want to start over, click **Reset Database**.
-""")
 
 if st.checkbox("Admin Panel"):
     if st.button("Reset Database"):
