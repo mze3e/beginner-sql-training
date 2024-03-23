@@ -1,0 +1,296 @@
+ProductId,Colour,DaysToManufacture,Description,ListPrice,Name,StandardCost,Weight
+1,Black,1,TBD,175.49,LL Crankset,77.91,94.49
+2,,0,TBD,29.99,ML Mountain Tire,11.21,77.36
+3,Yellow,4,TBD,742.35,"Touring-3000 Yellow, 62",461.44,50.86
+4,Red,4,TBD,1457.99,"Road-450 Red, 58",884.7,55.89
+5,Silver,1,TBD,1364.5,"HL Mountain Frame - Silver, 48",706.81,52.61
+6,Red,0,TBD,34.99,"Sport-100 Helmet, Red",13.08,53.49
+7,Yellow,4,TBD,742.35,"Touring-3000 Yellow, 54",461.44,69.53
+8,Silver,4,TBD,3399.99,"Mountain-100 Silver, 42",1912.15,0.71
+9,Black,4,TBD,782.99,"Road-650 Black, 52",486.7,25.13
+10,Yellow,4,TBD,1120.49,"Road-550-W Yellow, 48",713.07,7.03
+11,Red,1,TBD,594.83,"ML Road Frame - Red, 48",352.13,36.91
+12,Black,1,TBD,337.22,"LL Road Frame - Black, 62",204.62,85.44
+13,Black,4,TBD,539.99,"Road-750 Black, 52",343.64,7.47
+14,,1,TBD,27.12,LL Road Seat/Saddle,12.04,12.92
+15,Blue,1,TBD,1003.91,"HL Touring Frame - Blue, 60",601.74,38.11
+16,Silver,1,TBD,106.5,Rear Brakes,47.28,45.1
+17,Multi,0,TBD,49.99,"Long-Sleeve Logo Jersey, XL",38.49,89.37
+18,Silver,1,TBD,121.46,Rear Derailleur,53.92,28.29
+19,Silver,4,TBD,564.99,"Mountain-500 Silver, 42",308.21,4.31
+20,Yellow,0,TBD,53.99,"Short-Sleeve Classic Jersey, S",41.57,17.38
+21,Silver/Black,1,TBD,80.99,Touring Pedal,35.95,66.24
+22,,1,TBD,120.27,HL Mountain Handlebars,53.39,33.86
+23,Silver,4,TBD,2319.99,"Mountain-200 Silver, 38",1265.61,73.88
+24,Black,1,TBD,249.79,"LL Mountain Frame - Black, 52",136.78,35.16
+25,Black,4,TBD,3374.99,"Mountain-100 Black, 48",1898.09,7.68
+26,Black,4,TBD,2443.35,"Road-250 Black, 58",1554.94,91.44
+27,Silver,4,TBD,3399.99,"Mountain-100 Silver, 48",1912.15,65.8
+28,Blue,1,TBD,1003.91,"HL Touring Frame - Blue, 46",601.74,19.57
+29,Black,0,TBD,24.49,"Half-Finger Gloves, M",9.15,87.63
+30,White,0,TBD,9.5,"Mountain Bike Socks, M",3.39,0.05
+31,Black,1,TBD,330.06,HL Road Front Wheel,146.54,59.59
+32,,0,TBD,28.99,Touring Tire,10.84,96.68
+33,Black,4,TBD,1079.99,"Mountain-300 Black, 38",598.43,97.65
+34,,0,TBD,44.99,Headlights - Weatherproof,18.55,4.3
+35,Black,4,TBD,539.99,"Mountain-500 Black, 52",294.57,52.73
+36,Yellow,1,TBD,333.42,"LL Touring Frame - Yellow, 58",199.85,62.43
+37,Yellow,1,TBD,594.83,"ML Road Frame-W - Yellow, 48",360.94,24.48
+38,Silver,1,TBD,1364.5,"HL Mountain Frame - Silver, 46",747.2,50.01
+39,Yellow,1,TBD,594.83,"ML Road Frame-W - Yellow, 42",360.94,12.48
+40,Red,4,TBD,2443.35,"Road-250 Red, 48",1518.78,29.93
+41,Multi,0,TBD,89.99,"Men's Bib-Shorts, L",37.12,82.06
+42,Black,1,TBD,348.76,"ML Mountain Frame - Black, 40",185.81,63.2
+43,Red,1,TBD,1431.5,"HL Road Frame - Red, 62",868.63,86.21
+44,Black,4,TBD,539.99,"Mountain-500 Black, 42",294.57,87.3
+45,Black,1,TBD,337.22,"LL Road Frame - Black, 58",204.62,79.87
+46,,0,TBD,159,All-Purpose Bike Stand,59.46,92.74
+47,Black,1,TBD,337.22,"LL Road Frame - Black, 60",204.62,8.66
+48,Black,1,TBD,87.74,LL Mountain Rear Wheel,38.95,86.2
+49,,1,TBD,44.54,LL Road Handlebars,19.77,13.8
+50,Silver,1,TBD,91.49,Front Derailleur,40.62,9.87
+51,Red,4,TBD,3578.27,"Road-150 Red, 44",2171.29,55.89
+52,Blue,4,TBD,1214.85,"Touring-2000 Blue, 46",755.15,35.27
+53,Blue,4,TBD,1214.85,"Touring-2000 Blue, 54",755.15,44.44
+54,Red,1,TBD,1431.5,"HL Road Frame - Red, 48",868.63,5.29
+55,Black,1,TBD,404.99,HL Crankset,179.81,32.44
+56,Red,1,TBD,337.22,"LL Road Frame - Red, 60",187.15,63.73
+57,Red,4,TBD,782.99,"Road-650 Red, 60",486.7,30.81
+58,Red,4,TBD,3578.27,"Road-150 Red, 52",2171.29,56.75
+59,Black,0,TBD,69.99,"Women's Mountain Shorts, M",26.17,20.22
+60,Black,0,TBD,37.99,"Full-Finger Gloves, S",15.67,86.41
+61,Blue,0,TBD,34.99,"Sport-100 Helmet, Blue",13.08,3.98
+62,,0,TBD,24.99,LL Mountain Tire,9.34,59.05
+63,Red,1,TBD,594.83,"ML Road Frame - Red, 60",352.13,40.72
+64,Black,2,TBD,249.79,"LL Mountain Frame - Black, 40",136.78,85.32
+65,Black,1,TBD,337.22,"LL Road Frame - Black, 48",204.62,40.06
+66,Blue,4,TBD,742.35,"Touring-3000 Blue, 50",461.44,54.15
+67,Black,4,TBD,782.99,"Road-650 Black, 60",486.7,87.84
+68,,1,TBD,52.64,HL Mountain Seat/Saddle,23.37,76.27
+69,,1,TBD,53.99,LL Bottom Bracket,23.97,85
+70,Red,4,TBD,782.99,"Road-650 Red, 52",486.7,47.7
+71,Black,1,TBD,348.76,"ML Mountain Frame - Black, 48",185.81,97.54
+72,,0,TBD,34.99,Headlights - Dual-Beam,14.43,21.43
+73,Blue,4,TBD,2384.07,"Touring-1000 Blue, 46",1481.93,69.08
+74,Black,4,TBD,539.99,"Mountain-500 Black, 44",294.57,26.76
+75,,0,TBD,19.99,Minipump,8.24,31.13
+76,Black,1,TBD,245.01,Touring Rear Wheel,108.78,27.21
+77,Black,1,TBD,1431.5,"HL Road Frame - Black, 44",868.63,62.87
+78,,1,TBD,39.14,ML Mountain Seat/Saddle,17.37,20.99
+79,,0,TBD,7.95,Bike Wash - Dissolver,2.97,84.13
+80,,1,TBD,101.24,ML Bottom Bracket,44.95,45.95
+81,Silver/Black,1,TBD,62.09,ML Road Pedal,27.56,24.36
+82,Red,4,TBD,3578.27,"Road-150 Red, 56",2171.29,3.1
+83,Black,4,TBD,539.99,"Road-750 Black, 58",343.64,19.25
+84,Red,4,TBD,782.99,"Road-650 Red, 62",486.7,78.58
+85,Blue,1,TBD,333.42,"LL Touring Frame - Blue, 44",199.85,41.28
+86,Black,1,TBD,1349.6,"HL Mountain Frame - Black, 48",699.09,73.01
+87,Blue,4,TBD,742.35,"Touring-3000 Blue, 54",461.44,89.7
+88,,1,TBD,52.64,HL Road Seat/Saddle,23.37,33.09
+89,Black,0,TBD,59.99,"Men's Sports Shorts, S",24.74,45.42
+90,,0,TBD,4.99,Water Bottle - 30 oz.,1.86,33.98
+91,Black,0,TBD,37.99,"Full-Finger Gloves, M",15.67,48.58
+92,Silver,1,TBD,264.05,"LL Mountain Frame - Silver, 48",144.59,25.78
+93,Blue,4,TBD,742.35,"Touring-3000 Blue, 44",461.44,53.37
+94,,1,TBD,61.92,ML Road Handlebars,27.49,38.65
+95,Black,4,TBD,539.99,"Mountain-500 Black, 48",294.57,91.11
+96,Red,4,TBD,3578.27,"Road-150 Red, 62",2171.29,67.78
+97,Black,1,TBD,1431.5,"HL Road Frame - Black, 62",868.63,55.77
+98,Yellow,4,TBD,1700.99,"Road-350-W Yellow, 44",1082.51,60.03
+99,,1,TBD,61.92,ML Mountain Handlebars,27.49,43.68
+100,Yellow,1,TBD,333.42,"LL Touring Frame - Yellow, 54",199.85,96.45
+101,,0,TBD,8.99,Road Bottle Cage,3.36,67.66
+102,Yellow,1,TBD,333.42,"LL Touring Frame - Yellow, 44",199.85,47.93
+103,Multi,0,TBD,49.99,"Long-Sleeve Logo Jersey, S",38.49,92.42
+104,,1,TBD,121.49,HL Bottom Bracket,53.94,75.29
+105,Black,4,TBD,3374.99,"Mountain-100 Black, 42",1898.09,61.34
+106,Red,4,TBD,2443.35,"Road-250 Red, 52",1518.78,64.5
+107,Black,0,TBD,74.99,"Women's Tights, M",30.93,22.85
+108,Black,0,TBD,24.49,"Half-Finger Gloves, L",9.15,64.94
+109,Yellow,1,TBD,594.83,"ML Road Frame-W - Yellow, 44",360.94,95.26
+110,Blue,1,TBD,333.42,"LL Touring Frame - Blue, 58",199.85,16.2
+111,Blue,4,TBD,1214.85,"Touring-2000 Blue, 50",755.15,74.32
+112,Black,4,TBD,1079.99,"Mountain-300 Black, 48",598.43,63.96
+113,Red,4,TBD,2443.35,"Road-250 Red, 44",1518.78,4.19
+114,Silver,1,TBD,1364.5,"HL Mountain Frame - Silver, 44",706.81,32
+115,Black,0,TBD,69.99,"Women's Mountain Shorts, S",26.17,92.53
+116,,1,TBD,46.09,LL Touring Handlebars,20.46,85.56
+117,Blue,0,TBD,63.5,"Classic Vest, M",23.74,73.34
+118,Black,4,TBD,3374.99,"Mountain-100 Black, 38",1898.09,61.98
+119,Blue,0,TBD,63.5,"Classic Vest, L",23.74,40.4
+120,Multi,0,TBD,49.99,"Long-Sleeve Logo Jersey, L",38.49,50.54
+121,Multi,0,TBD,89.99,"Men's Bib-Shorts, S",37.12,92.86
+122,White,0,TBD,8.99,"Racing Socks, L",3.36,41.16
+123,Red,4,TBD,1457.99,"Road-450 Red, 52",884.7,10.96
+124,Yellow,4,TBD,1120.49,"Road-550-W Yellow, 42",713.07,36.9
+125,Black,0,TBD,37.99,"Full-Finger Gloves, L",15.67,70.5
+126,Blue,4,TBD,2384.07,"Touring-1000 Blue, 50",1481.93,10.08
+127,Black,2,TBD,348.76,"ML Mountain Frame - Black, 38",185.81,63.41
+128,Grey,0,TBD,125,"Touring-Panniers, Large",51.56,95.14
+129,Black,0,TBD,59.99,"Men's Sports Shorts, XL",24.74,47.38
+130,Black,1,TBD,248.38,ML Road Front Wheel,110.28,11.62
+131,Black,1,TBD,348.76,"ML Mountain Frame - Black, 44",185.81,91.65
+132,Black,4,TBD,2443.35,"Road-250 Black, 44",1554.94,58.17
+133,Silver,1,TBD,106.5,Front Brakes,47.28,61.13
+134,Black,1,TBD,327.21,HL Mountain Rear Wheel,145.28,17.17
+135,Silver/Black,1,TBD,62.09,ML Mountain Pedal,27.56,92.09
+136,Blue,1,TBD,1003.91,"HL Touring Frame - Blue, 54",601.74,97.33
+137,Yellow,4,TBD,1120.49,"Road-550-W Yellow, 44",713.07,42.46
+138,Silver,2,TBD,364.09,"ML Mountain Frame-W - Silver, 38",199.37,9.55
+139,Red,4,TBD,3578.27,"Road-150 Red, 48",2171.29,77.48
+140,White,0,TBD,8.99,"Racing Socks, M",3.36,55.24
+141,Yellow,1,TBD,1003.91,"HL Touring Frame - Yellow, 50",601.74,94.17
+142,Silver,2,TBD,264.05,"LL Mountain Frame - Silver, 40",144.59,51.19
+143,Blue,4,TBD,2384.07,"Touring-1000 Blue, 60",1481.93,34.19
+144,Red,1,TBD,594.83,"ML Road Frame - Red, 58",352.13,23.5
+145,Multi,0,TBD,89.99,"Men's Bib-Shorts, M",37.12,44.21
+146,Blue,4,TBD,2384.07,"Touring-1000 Blue, 54",1481.93,57.96
+147,,0,TBD,4.99,Touring Tire Tube,1.86,1.79
+148,Black,1,TBD,236.02,ML Mountain Rear Wheel,104.79,49.45
+149,Black,0,TBD,74.99,"Women's Tights, S",30.93,70.06
+150,Silver/Black,1,TBD,80.99,HL Road Pedal,35.95,58.17
+151,Silver,4,TBD,769.49,"Mountain-400-W Silver, 42",419.77,49.12
+152,Red,1,TBD,1431.5,"HL Road Frame - Red, 52",868.63,46.51
+153,Black,4,TBD,782.99,"Road-650 Black, 48",486.7,44
+154,Black,2,TBD,1349.6,"HL Mountain Frame - Black, 38",739.04,72.13
+155,Black,1,TBD,249.79,"LL Mountain Frame - Black, 48",136.78,6.59
+156,Black,1,TBD,209.02,ML Mountain Front Wheel,92.8,43.88
+157,Red,1,TBD,337.22,"LL Road Frame - Red, 62",187.15,81.95
+158,Black,1,TBD,112.56,LL Road Rear Wheel,49.97,76.39
+159,,1,TBD,124.73,HL Headset,55.38,47.82
+160,,0,TBD,21.49,LL Road Tire,8.03,93.39
+161,,0,TBD,24.99,ML Road Tire,9.34,1.91
+162,Black,4,TBD,1079.99,"Mountain-300 Black, 40",598.43,24.81
+163,,0,TBD,32.6,HL Road Tire,12.19,26.87
+164,,0,TBD,25,Cable Lock,10.31,56.22
+165,,1,TBD,102.29,ML Headset,45.41,96.35
+166,Black,1,TBD,256.49,ML Crankset,113.88,45.63
+167,Yellow,4,TBD,1120.49,"Road-550-W Yellow, 40",713.07,28.94
+168,Black,1,TBD,337.22,"LL Road Frame - Black, 44",204.62,79.99
+169,Black,1,TBD,85.56,LL Road Front Wheel,37.99,44.32
+170,Silver,1,TBD,264.05,"LL Mountain Frame - Silver, 52",144.59,79.43
+171,Yellow,0,TBD,53.99,"Short-Sleeve Classic Jersey, M",41.57,71.6
+172,Silver/Black,1,TBD,40.49,LL Road Pedal,17.97,61.33
+173,Black,4,TBD,782.99,"Road-650 Black, 44",486.7,46.28
+174,Yellow,4,TBD,742.35,"Touring-3000 Yellow, 50",461.44,11.83
+175,Black,4,TBD,3374.99,"Mountain-100 Black, 44",1898.09,43.03
+176,Black,4,TBD,782.99,"Road-650 Black, 58",486.7,18.48
+177,Black,0,TBD,74.99,"Women's Tights, L",30.93,99.07
+178,Silver,1,TBD,1364.5,"HL Mountain Frame - Silver, 42",747.2,97.98
+179,Red,1,TBD,594.83,"ML Road Frame - Red, 52",352.13,7.36
+180,Silver,4,TBD,564.99,"Mountain-500 Silver, 52",308.21,98.96
+181,Red,4,TBD,1457.99,"Road-450 Red, 60",884.7,93.84
+182,Silver,4,TBD,3399.99,"Mountain-100 Silver, 38",1912.15,71.36
+183,Silver,4,TBD,564.99,"Mountain-500 Silver, 40",308.21,17.06
+184,Silver/Black,1,TBD,80.99,HL Mountain Pedal,35.95,5.61
+185,Red,4,TBD,1457.99,"Road-450 Red, 44",884.7,39.74
+186,Multi,0,TBD,49.99,"Long-Sleeve Logo Jersey, M",38.49,52.29
+187,Yellow,4,TBD,1120.49,"Road-550-W Yellow, 38",713.07,73.55
+188,Black,1,TBD,300.21,HL Mountain Front Wheel,133.29,79.11
+189,Yellow,1,TBD,1003.91,"HL Touring Frame - Yellow, 60",601.74,3.33
+190,,1,TBD,175.49,ML Fork,77.91,24.93
+191,Black,4,TBD,1079.99,"Mountain-300 Black, 44",598.43,13.35
+192,Red,4,TBD,782.99,"Road-650 Red, 48",486.7,65.48
+193,Yellow,4,TBD,742.35,"Touring-3000 Yellow, 58",461.44,97
+194,Silver/Black,1,TBD,40.49,LL Mountain Pedal,17.97,25.14
+195,Red,1,TBD,337.22,"LL Road Frame - Red, 52",187.15,21.76
+196,Black,1,TBD,218.01,Touring Front Wheel,96.79,16.08
+197,Black,0,TBD,59.99,"Men's Sports Shorts, M",24.74,53.7
+198,,0,TBD,13.99,Taillights - Battery-Powered,5.77,49.57
+199,,1,TBD,44.54,LL Mountain Handlebars,19.77,29.06
+200,Yellow,4,TBD,2384.07,"Touring-1000 Yellow, 60",1481.93,26.55
+201,Silver,4,TBD,3399.99,"Mountain-100 Silver, 44",1912.15,1.47
+202,Blue,1,TBD,1003.91,"HL Touring Frame - Blue, 50",601.74,71.92
+203,Black,4,TBD,2443.35,"Road-250 Black, 48",1554.94,36.26
+204,Red,1,TBD,1431.5,"HL Road Frame - Red, 56",868.63,37.02
+205,,1,TBD,27.12,LL Touring Seat/Saddle,12.04,64.61
+206,,1,TBD,91.57,HL Touring Handlebars,40.65,76.07
+207,Black,0,TBD,24.49,"Half-Finger Gloves, S",9.15,31.34
+208,,0,TBD,120,Hitch Rack - 4-Bike,44.88,40.84
+209,Yellow,4,TBD,1700.99,"Road-350-W Yellow, 40",1082.51,21.64
+210,Silver,1,TBD,264.05,"LL Mountain Frame - Silver, 42",144.59,42.91
+211,Blue,4,TBD,1214.85,"Touring-2000 Blue, 60",755.15,83.25
+212,Black,1,TBD,1431.5,"HL Road Frame - Black, 52",868.63,85.12
+213,,0,TBD,3.99,Road Tire Tube,1.49,12.38
+214,Black,1,TBD,1349.6,"HL Mountain Frame - Black, 42",739.04,15.1
+215,Red,1,TBD,1431.5,"HL Road Frame - Red, 58",1059.31,10.64
+216,Blue,0,TBD,63.5,"Classic Vest, S",23.74,59.06
+217,Red,4,TBD,782.99,"Road-650 Red, 58",486.7,22.95
+218,Silver,1,TBD,20.24,Chain,8.98,95.91
+219,,1,TBD,52.64,HL Touring Seat/Saddle,23.37,27.86
+220,Red,1,TBD,337.22,"LL Road Frame - Red, 48",187.15,93.07
+221,Yellow,4,TBD,2384.07,"Touring-1000 Yellow, 46",1481.93,66.89
+222,Black,0,TBD,59.99,"Men's Sports Shorts, L",24.74,67.34
+223,,1,TBD,148.22,LL Fork,65.8,18.92
+224,Yellow,4,TBD,2384.07,"Touring-1000 Yellow, 54",1481.93,68.11
+225,Yellow,4,TBD,1700.99,"Road-350-W Yellow, 48",1082.51,57.84
+226,Silver,0,TBD,54.99,Hydration Pack - 70 oz.,20.56,71.03
+227,Silver,1,TBD,364.09,"ML Mountain Frame-W - Silver, 42",199.37,80.86
+228,,0,TBD,2.29,Patch Kit/8 Patches,0.85,58.94
+229,Blue,4,TBD,742.35,"Touring-3000 Blue, 58",461.44,65.92
+230,Multi,0,TBD,8.99,AWC Logo Cap,6.92,65.15
+231,Blue,1,TBD,333.42,"LL Touring Frame - Blue, 62",199.85,51.3
+232,Black,1,TBD,249.79,"LL Mountain Frame - Black, 42",136.78,3.43
+233,,0,TBD,21.98,Fender Set - Mountain,8.22,16.53
+234,Silver,4,TBD,769.49,"Mountain-400-W Silver, 46",419.77,70.82
+235,,1,TBD,229.49,HL Fork,101.89,40.51
+236,,0,TBD,35,HL Mountain Tire,13.09,26.11
+237,Silver,4,TBD,564.99,"Mountain-500 Silver, 48",308.21,39.09
+238,Yellow,0,TBD,53.99,"Short-Sleeve Classic Jersey, XL",41.57,72.57
+239,,1,TBD,34.2,LL Headset,15.18,12.91
+240,Yellow,1,TBD,333.42,"LL Touring Frame - Yellow, 50",199.85,34.63
+241,Silver,1,TBD,264.05,"LL Mountain Frame - Silver, 44",144.59,87.51
+242,Yellow,2,TBD,594.83,"ML Road Frame-W - Yellow, 38",360.94,63.85
+243,Silver,4,TBD,564.99,"Mountain-500 Silver, 44",308.21,5.08
+244,Black,1,TBD,1349.6,"HL Mountain Frame - Black, 46",739.04,67.99
+245,Black,4,TBD,782.99,"Road-650 Black, 62",486.7,83.05
+246,Silver,1,TBD,364.09,"ML Mountain Frame-W - Silver, 46",199.37,32.55
+247,Blue,1,TBD,333.42,"LL Touring Frame - Blue, 50",199.85,13.03
+248,Silver,4,TBD,769.49,"Mountain-400-W Silver, 38",419.77,18.81
+249,Black,1,TBD,275.38,ML Road Rear Wheel,122.27,28.18
+250,Silver,4,TBD,769.49,"Mountain-400-W Silver, 40",419.77,30.48
+251,Yellow,4,TBD,1700.99,"Road-350-W Yellow, 42",1082.51,79.44
+252,Black,4,TBD,539.99,"Road-750 Black, 44",343.64,39.42
+253,,0,TBD,24.99,Mountain Pump,10.3,16.52
+254,,0,TBD,9.99,Mountain Bottle Cage,3.73,73.55
+255,Black,4,TBD,2443.35,"Road-250 Black, 52",1554.94,29.39
+256,Black,4,TBD,539.99,"Mountain-500 Black, 40",294.57,46.72
+257,Red,4,TBD,1457.99,"Road-450 Red, 48",884.7,49.89
+258,Black,0,TBD,34.99,"Sport-100 Helmet, Black",13.08,68.96
+259,,1,TBD,27.12,LL Mountain Seat/Saddle,12.04,42.25
+260,Blue,4,TBD,742.35,"Touring-3000 Blue, 62",461.44,60.36
+261,,1,TBD,39.14,ML Road Seat/Saddle,17.37,22.62
+262,Black,4,TBD,539.99,"Road-750 Black, 48",343.64,38.77
+263,Yellow,1,TBD,1003.91,"HL Touring Frame - Yellow, 54",601.74,84.67
+264,Black,1,TBD,337.22,"LL Road Frame - Black, 52",204.62,11.29
+265,,1,TBD,120.27,HL Road Handlebars,53.39,54.47
+266,Silver,4,TBD,2319.99,"Mountain-200 Silver, 46",1265.61,95.58
+267,Silver,4,TBD,2319.99,"Mountain-200 Silver, 42",1265.61,24.59
+268,,1,TBD,39.14,ML Touring Seat/Saddle,17.37,93.51
+269,Black,1,TBD,249.79,"LL Mountain Frame - Black, 44",136.78,40.95
+270,Silver,1,TBD,364.09,"ML Mountain Frame-W - Silver, 40",199.37,25.57
+271,Yellow,1,TBD,594.83,"ML Road Frame-W - Yellow, 40",360.94,89.58
+272,Red,1,TBD,594.83,"ML Road Frame - Red, 44",352.13,90.02
+273,Yellow,1,TBD,333.42,"LL Touring Frame - Yellow, 62",199.85,1.15
+274,Yellow,4,TBD,2384.07,"Touring-1000 Yellow, 50",1481.93,72.46
+275,Black,4,TBD,2294.99,"Mountain-200 Black, 46",1251.98,19.24
+276,Black,1,TBD,1349.6,"HL Mountain Frame - Black, 44",699.09,36.05
+277,Black,4,TBD,2294.99,"Mountain-200 Black, 42",1251.98,12.59
+278,Yellow,0,TBD,53.99,"Short-Sleeve Classic Jersey, L",41.57,80.53
+279,Black,1,TBD,1431.5,"HL Road Frame - Black, 58",1059.31,91
+280,Yellow,4,TBD,742.35,"Touring-3000 Yellow, 44",461.44,51.52
+281,Red,4,TBD,2443.35,"Road-250 Red, 58",1554.94,63.52
+282,Red,1,TBD,337.22,"LL Road Frame - Red, 58",187.15,94.81
+283,Black,0,TBD,69.99,"Women's Mountain Shorts, L",26.17,55.44
+284,,0,TBD,4.99,Mountain Tire Tube,1.86,50.65
+285,Blue,1,TBD,333.42,"LL Touring Frame - Blue, 54",199.85,1.35
+286,Black,1,TBD,1431.5,"HL Road Frame - Black, 48",868.63,79.55
+287,Yellow,1,TBD,1003.91,"HL Touring Frame - Yellow, 46",601.74,15.64
+288,Black,1,TBD,60.74,LL Mountain Front Wheel,26.97,59.91
+289,Black,4,TBD,2294.99,"Mountain-200 Black, 38",1251.98,51.85
+290,Black,1,TBD,357.06,HL Road Rear Wheel,158.53,48.03
+291,White,0,TBD,9.5,"Mountain Bike Socks, L",3.39,98.63
+292,Red,4,TBD,782.99,"Road-650 Red, 44",486.7,17.5
+293,Silver,2,TBD,1364.5,"HL Mountain Frame - Silver, 38",747.2,68.64
+294,Red,1,TBD,1431.5,"HL Road Frame - Red, 44",868.63,22.74
+295,Red,1,TBD,337.22,"LL Road Frame - Red, 44",187.15,83.48
