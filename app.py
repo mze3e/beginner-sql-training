@@ -66,7 +66,7 @@ def reset_database():
     st.success("Database reset to original state!")
 
 
-st.markdown("# DataHub - SQL Querying Workshop")
+st.markdown("# SQL Querying Workshop")
 
 
 # Example queries dropdown
@@ -112,6 +112,12 @@ with st.form(key='query_form'):
 tables = run_query("SELECT table_name FROM information_schema.tables order by table_name;")
 col1, col2 = st.columns([1, 2])
 # Display the tables and their columns in the database with st.expander
+
+if tables.shape[0] == 0:
+    st.warning("No tables found in the database!")
+    with st.spinner("Resetting database..."):
+        reset_database()
+    st.rerun()
 
 col1.markdown("## Tables")
 with col1:
