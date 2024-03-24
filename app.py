@@ -10,6 +10,7 @@ import os
 import streamlit as st
 import duckdb
 import pandas as pd
+from streamlit_ace import st_ace
 
 # Set page config to wide layout
 st.set_page_config(layout="wide")
@@ -98,15 +99,18 @@ query = st.selectbox("Example Queries", options=list(example_queries.keys()))
 
 # SQL Query Editor
 
-with st.form(key='query_form'):
-    user_query = st.text_area("Write your SQL query here:",
-                              value=example_queries[query],
-                              height=150)
 
-    # Buttons for running and resetting
-    if st.form_submit_button("Run Query"):
-        result = run_query(user_query)
-        st.dataframe(result)
+user_query = st_ace(language='sql',
+                    placeholder="Write your SQL query here...",
+                    value=example_queries[query],
+                    height=150)
+
+with st.spinner("Running Query..."):
+    result = run_query(user_query)
+    st.markdown("#### Query Results")
+    st.info(f"**{result.shape[0]} {'row' if result.shape[0]==1 else 'rows'}** returned.")
+
+    st.table(result)
 
 
 tables = run_query("SELECT table_name FROM information_schema.tables order by table_name;")
