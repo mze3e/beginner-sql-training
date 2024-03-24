@@ -53,7 +53,7 @@ def reset_database():
     """
     try:
         get_connection().close()
-    except:
+    except Exception:
         pass
 
     if os.path.exists("sample.db"):
@@ -113,7 +113,7 @@ with st.spinner("Running Query..."):
     st.markdown("#### Query Results")
     st.info(f"**{result.shape[0]} {'row' if result.shape[0]==1 else 'rows'}** returned.")
 
-    st.table(result)
+    st.dataframe(result)
 
 
 tables = run_query("SELECT table_name FROM information_schema.tables order by table_name;")
