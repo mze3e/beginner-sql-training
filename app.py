@@ -12,7 +12,6 @@ import duckdb
 import pandas as pd
 from streamlit_ace import st_ace
 import plotly.express as px
-import graphviz
 
 # Set page config to wide layout
 st.set_page_config(layout="wide")
@@ -55,7 +54,7 @@ def reset_database():
     """
     try:
         get_connection().close()
-    except Exception:
+    except duckdb.Error:
         pass
 
     if os.path.exists("sample.db"):
@@ -90,7 +89,7 @@ def dynamic_visualization(df):
         ("Line Chart", "Bar Chart", "Scatter Plot", "Area Chart")
     )
 
-    # User selects columns for visualization (x and y axis for 
+    # User selects columns for visualization (x and y axis for
     # scatter plot, line chart, and area chart.
     if chart_type in ['Scatter Plot', 'Line Chart', 'Area Chart']:
         x_axis = st.selectbox("Select the X-axis:", options=df.columns)
@@ -124,9 +123,12 @@ example_queries = {
     "Select Customers": "SELECT * FROM customers;",
     "Count Orders": "SELECT COUNT(1) FROM orders;",
     "Filter Customers": "SELECT * FROM customers WHERE company = 'AdventureWorks';",
-    "Filter Customers (like)": "SELECT * FROM customers WHERE company = 'AdventureWorks' and address like '%Paris%'",
-    "Insert Customer": """INSERT INTO Customers (FirstName, LastName, Address, Company, Email, Phone)
-VALUES ('Ahmed', 'Muzammil', 'Bukit Batok East Avenue 5, Singapore', 'Bank of Singapore', 'ahmedmuzammil.jamalmohamed@bankofsingapore.com', '94780611')""",
+    "Filter Customers (like)":
+    "SELECT * FROM customers WHERE company = 'AdventureWorks' and address like '%Paris%'",
+    "Insert Customer": 
+"""INSERT INTO Customers (FirstName, LastName, Address, Company, Email, Phone)
+VALUES ('Ahmed', 'Muzammil', 'Bukit Batok East Avenue 5, Singapore', 
+'Bank of Singapore', 'ahmedmuzammil.jamalmohamed@bankofsingapore.com', '94780611')""",
     "Delete Customer": "DELETE FROM customers WHERE customerid = 501;",
     "Order Details (join)":    """select  CustomerName, Address, DatePlaced, DateFilled,
 InvoiceNumber, Colour, StandardCost, ListPrice, ListPrice-StandardCost as Profit
@@ -134,18 +136,24 @@ from lineitems
 left join orders on (lineitems.orderid = orders.orderid)
 left join products on (lineitems.productid = products.productid)
 where lineitems.orderid = 9""",
-    "Customer Wise Order Counts (join + aggregation)": """SELECT orders.customername, orders.address,
+    "Customer Wise Order Counts (join + aggregation)":
+"""SELECT orders.customername, orders.address,
 count(lineitems.lineitemid) total_line_items,
 sum(lineitems.quantity) total_item_count
 from orders 
 left join lineitems on orders.orderid = lineitems.orderid
 group by orders.orderid, orders.customername, orders.address""",
-    "Top 10 Profitable Customers (subquery + join + aggregation + ordering + limit)": """select customername, sum(profit) profit from (
-select  CustomerName, Address, DatePlaced, DateFilled, InvoiceNumber, Colour, StandardCost, ListPrice, ListPrice-StandardCost as Profit from lineitems 
+    "Top 10 Profitable Customers (subquery + join + aggregation + ordering + limit)":
+"""select customername, sum(profit) profit from (
+select  CustomerName, Address, DatePlaced, DateFilled, InvoiceNumber, 
+Colour, StandardCost, ListPrice, ListPrice-StandardCost as Profit 
+from lineitems 
 left join orders on (lineitems.orderid = orders.orderid)
 left join products on (lineitems.productid = products.productid)
 )x group by customername order by sum(profit) desc limit 10""",
-    "Customers Who Ordered For More than $40000 in 2017": """SELECT Customers.FirstName, Customers.LastName, Orders.OrderId, Orders.DatePlaced, SUM(Products.ListPrice * LineItems.Quantity) AS TotalPrice
+    "Customers Who Ordered For More than $40000 in 2017": 
+"""SELECT Customers.FirstName, Customers.LastName, Orders.OrderId,
+Orders.DatePlaced, SUM(Products.ListPrice * LineItems.Quantity) AS TotalPrice
 FROM Customers
 JOIN Orders ON Customers.CustomerId = Orders.CustomerId
 JOIN LineItems ON Orders.OrderId = LineItems.OrderId
@@ -223,7 +231,7 @@ st.markdown('---')
 st.markdown('## Entity Relationship Diagram')
 st.markdown('---')
 # Create a graphlib graph object
-st.graphviz_chart('''
+st.graphviz_chart(r'''
     digraph ERDiagram {
                                     
         node [shape=record, style=filled, fillcolor=gray95, margin=0.1, height=0, width=0];
@@ -264,7 +272,7 @@ with col1:
 - Wildcard Operator: **LIKE**
 - NULL Values: **IS NULL**
 """)
-    
+
 with col2:
     st.markdown('### Aggregation')
     st.markdown('[View Detailed Syntax and Examples](#aggregating-data-using-functions)')
@@ -279,7 +287,7 @@ with col2:
     st.markdown("Find the unique list of values:")
     st.markdown("""- **DISTINCT**
 - **GROUP BY** + **COUNT** + **HAVING** to find duplicates and their count""")
-    
+
 with col3:
     st.markdown('### Joining Tables')
     st.markdown('[View Detailed Syntax and Examples](#different-ways-to-join-tables)')
@@ -288,7 +296,7 @@ with col3:
 - **LEFT JOIN:** Selects all records from the left table, and the matched records from the right table. The result is NULL on the right side if there is no match.
 - **RIGHT JOIN:** Selects all records from the right table, and the matched records from the left table. The result is NULL on the left side if there is no match.
 """)
-    
+
 with col4:
     st.markdown('### Sorting/Ordering **ORDER BY**')
     st.markdown('[View Detailed Syntax and Examples](#sorting-and-ordering-data-using-order-by)')
