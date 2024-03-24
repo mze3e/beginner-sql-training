@@ -12,6 +12,7 @@ import duckdb
 import pandas as pd
 from streamlit_ace import st_ace
 import plotly.express as px
+import graphviz
 
 # Set page config to wide layout
 st.set_page_config(layout="wide")
@@ -89,7 +90,8 @@ def dynamic_visualization(df):
         ("Line Chart", "Bar Chart", "Scatter Plot", "Area Chart")
     )
 
-    # User selects columns for visualization (x and y axis for scatter plot, line chart, and area chart; x axis for bar chart)
+    # User selects columns for visualization (x and y axis for 
+    # scatter plot, line chart, and area chart.
     if chart_type in ['Scatter Plot', 'Line Chart', 'Area Chart']:
         x_axis = st.selectbox("Select the X-axis:", options=df.columns)
         y_axis = st.selectbox("Select the Y-axis:", options=df.columns)
@@ -142,7 +144,16 @@ group by orders.orderid, orders.customername, orders.address""",
 select  CustomerName, Address, DatePlaced, DateFilled, InvoiceNumber, Colour, StandardCost, ListPrice, ListPrice-StandardCost as Profit from lineitems 
 left join orders on (lineitems.orderid = orders.orderid)
 left join products on (lineitems.productid = products.productid)
-)x group by customername order by sum(profit) desc limit 10"""
+)x group by customername order by sum(profit) desc limit 10""",
+    "Customers Who Ordered For More than $40000 in 2017": """SELECT Customers.FirstName, Customers.LastName, Orders.OrderId, Orders.DatePlaced, SUM(Products.ListPrice * LineItems.Quantity) AS TotalPrice
+FROM Customers
+JOIN Orders ON Customers.CustomerId = Orders.CustomerId
+JOIN LineItems ON Orders.OrderId = LineItems.OrderId
+JOIN Products ON LineItems.ProductId = Products.ProductId
+WHERE YEAR(Orders.DatePlaced) = 2017
+GROUP BY Orders.OrderId, Customers.FirstName, Customers.LastName, Orders.DatePlaced
+HAVING SUM(Products.ListPrice * LineItems.Quantity) > 40000
+ORDER BY TotalPrice DESC;"""
 }
 query = st.selectbox("Example Queries", options=list(example_queries.keys()))
 
@@ -152,7 +163,7 @@ query = st.selectbox("Example Queries", options=list(example_queries.keys()))
 user_query = st_ace(language='sql',
                     placeholder="Write your SQL query here...",
                     value=example_queries[query],
-                    height=150)
+                    height=200)
 
 with st.spinner("Running Query..."):
     result = run_query(user_query)
@@ -207,6 +218,28 @@ with col2:
                                 FROM information_schema.columns
                                 WHERE table_name = '{row['table_name']}';""")
             st.dataframe(columns, hide_index=True)
+
+st.markdown('---')
+st.markdown('## Entity Relationship Diagram')
+st.markdown('---')
+# Create a graphlib graph object
+st.graphviz_chart('''
+    digraph ERDiagram {
+                                    
+        node [shape=record, style=filled, fillcolor=gray95, margin=0.1, height=0, width=0];
+        edge [color=black, arrowhead=crow, arrowtail=none, dir=both]
+
+        Customers [label="{**Customers**|+ CustomerId: INTEGER\l| Address: VARCHAR\l| Company: VARCHAR\l| Email: VARCHAR\l| FirstName: VARCHAR\l| LastName: VARCHAR\l| Phone: VARCHAR\l}"];
+        Orders [label="{**Orders**|+ OrderId: INTEGER\l| Address: VARCHAR\l| - CustomerId: INTEGER\l| CustomerName: VARCHAR\l| DateFilled: DATE\l| DatePlaced: DATE\l| InvoiceNumber: VARCHAR\l| PaymentStatus: VARCHAR\l| Status: VARCHAR\l| Term: VARCHAR\l}"];
+        LineItems [label="{**LineItems**|+ LineItemId: INTEGER\l| - OrderId: INTEGER\l| - ProductId: INTEGER\l| Quantity: INTEGER\l}"];
+        Products [label="{**Products**|+ ProductId: INTEGER\l| Colour: VARCHAR\l| DaysToManufacture: INTEGER\l| Description: VARCHAR\l| ListPrice: DECIMAL(10,2)\l| Name: VARCHAR\l| StandardCost: DECIMAL(10,2)\l| Weight: DECIMAL(10,2)\l}"];
+
+        Orders -> Customers [label="CustomerId", taillabel="1", headlabel="*"];
+        LineItems -> Orders [label="OrderId", taillabel="1", headlabel="*"];
+        LineItems -> Products [label="ProductId", taillabel="1", headlabel="*"];
+    }
+''')
+
 
 st.markdown('---')
 st.markdown('## CHEATSHEET: SQL Querying Basics')
@@ -516,8 +549,6 @@ Let's expand on the filtering data with `WHERE` clause section, providing more d
 
 Each of these concepts is foundational in SQL and helps in various data manipulation and retrieval operations. By understanding and applying these operations, one can efficiently work with databases to extract and analyze data.
 """)
-
-
 
 if st.checkbox("Admin Panel"):
     if st.button("Reset Database"):
