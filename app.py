@@ -11,6 +11,7 @@ import streamlit as st
 import duckdb
 import pandas as pd
 from streamlit_ace import st_ace
+import plotly.express as px
 
 # Set page config to wide layout
 st.set_page_config(layout="wide")
@@ -70,33 +71,76 @@ def reset_database():
     st.success("Database reset to original state!")
 
 
+def dynamic_visualization(df):
+    """
+    Dynamically visualize a pandas dataframe using Streamlit.
+
+    Parameters:
+    - df: pandas.DataFrame - The dataframe to visualize.
+    """
+    # Ensure the dataframe has the required columns for visualization
+    if df is None or df.empty:
+        st.write("No data available for visualization.")
+        return
+
+    # User selects the type of visualization
+    chart_type = st.selectbox(
+        "Select the chart type:",
+        ("Line Chart", "Bar Chart", "Scatter Plot", "Area Chart")
+    )
+
+    # User selects columns for visualization (x and y axis for scatter plot, line chart, and area chart; x axis for bar chart)
+    if chart_type in ['Scatter Plot', 'Line Chart', 'Area Chart']:
+        x_axis = st.selectbox("Select the X-axis:", options=df.columns)
+        y_axis = st.selectbox("Select the Y-axis:", options=df.columns)
+    elif chart_type == 'Bar Chart':
+        x_axis = st.selectbox("Select the X-axis:", options=df.columns)
+        y_axis = st.selectbox("Select the Y-axis:", options=df.columns)
+
+    try:
+        # Generate the selected type of visualization
+        if chart_type == "Line Chart":
+            st.line_chart(df.set_index(x_axis)[y_axis])
+        elif chart_type == "Bar Chart":
+            st.bar_chart(df.set_index(x_axis)[y_axis])
+        elif chart_type == "Scatter Plot":
+            st.plotly_chart(px.scatter(df, x=x_axis, y=y_axis))
+        elif chart_type == "Area Chart":
+            st.area_chart(df.set_index(x_axis)[y_axis])
+    except (TypeError, ValueError, KeyError) as e:
+        st.error(f"""Try Choose Different Columns for the visualisation.\n\n
+                 Error: {e}""")
+
+
+
+###################### App Starts Here ######################
+
 st.markdown("# SQL Querying Workshop")
 
 
 # Example queries dropdown
 example_queries = {
     "Select Customers": "SELECT * FROM customers;",
-    "Select Orders": "SELECT * FROM orders;",
-    "Select Products": "SELECT * FROM products;",
     "Count Orders": "SELECT COUNT(1) FROM orders;",
     "Filter Customers": "SELECT * FROM customers WHERE company = 'AdventureWorks';",
-    "Select OrderDetails":    """select  CustomerName, Address, DatePlaced, DateFilled,
+    "Filter Customers (like)": "SELECT * FROM customers WHERE company = 'AdventureWorks' and address like '%Paris%'",
+    "Order Details (join)":    """select  CustomerName, Address, DatePlaced, DateFilled,
 InvoiceNumber, Colour, StandardCost, ListPrice, ListPrice-StandardCost as Profit
 from lineitems 
 left join orders on (lineitems.orderid = orders.orderid)
 left join products on (lineitems.productid = products.productid)
 where lineitems.orderid = 9""",
-    "Select Order Counts": """SELECT orders.customername, orders.address,
+    "Customer Wise Order Counts (join + aggregation)": """SELECT orders.customername, orders.address,
 count(lineitems.lineitemid) total_line_items,
 sum(lineitems.quantity) total_item_count
 from orders 
 left join lineitems on orders.orderid = lineitems.orderid
 group by orders.orderid, orders.customername, orders.address""",
-    "List Profitable Customers": """select customername, sum(profit) profit from (
+    "Top 10 Profitable Customers (subquery + join + aggregation + ordering + limit)": """select customername, sum(profit) profit from (
 select  CustomerName, Address, DatePlaced, DateFilled, InvoiceNumber, Colour, StandardCost, ListPrice, ListPrice-StandardCost as Profit from lineitems 
 left join orders on (lineitems.orderid = orders.orderid)
 left join products on (lineitems.productid = products.productid)
-)x group by customername order by sum(profit) desc"""
+)x group by customername order by sum(profit) desc limit 10"""
 }
 query = st.selectbox("Example Queries", options=list(example_queries.keys()))
 
@@ -114,6 +158,9 @@ with st.spinner("Running Query..."):
     st.info(f"**{result.shape[0]} {'row' if result.shape[0]==1 else 'rows'}** returned.")
 
     st.dataframe(result)
+
+    if st.checkbox("Visualize Data"):
+        dynamic_visualization(result)
 
 
 tables = run_query("SELECT table_name FROM information_schema.tables order by table_name;")

@@ -3,3 +3,4 @@ duckdb
 pandas
 streamlit-ace
 jinja2==3.1.2
+plotly
