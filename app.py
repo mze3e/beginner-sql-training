@@ -51,7 +51,10 @@ def reset_database():
     Resets the database by deleting all records from a table 
     and re-importing the data from a backup table.
     """
-    get_connection().close()
+    try:
+        get_connection().close()
+    except:
+        pass
 
     if os.path.exists("sample.db"):
         os.remove("sample.db")
