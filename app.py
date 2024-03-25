@@ -128,7 +128,7 @@ example_queries = {
     "Insert Customer": 
 """INSERT INTO Customers (FirstName, LastName, Address, Company, Email, Phone)
 VALUES ('Ahmed', 'Muzammil', 'Singapore', 
-'Acme Company Limited', 'ahmedmzl@gmail.com', '94780611')""",
+'Acme Company Limited', 'ahmedmzl@acmecompany.com', '90000000')""",
     "Delete Customer": "DELETE FROM customers WHERE customerid = 501;",
     "Order Details (join)":    """select  CustomerName, Address, DatePlaced, DateFilled,
 InvoiceNumber, Colour, StandardCost, ListPrice, ListPrice-StandardCost as Profit
