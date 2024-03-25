@@ -121,14 +121,14 @@ st.markdown("# SQL Querying Workshop")
 # Example queries dropdown
 example_queries = {
     "Select Customers": "SELECT * FROM customers;",
-    "Count Orders": "SELECT COUNT(1) FROM orders;",
     "Filter Customers": "SELECT * FROM customers WHERE company = 'AdventureWorks';",
-    "Filter Customers (like)":
+    "Filter Customers with Wildcard (like)":
     "SELECT * FROM customers WHERE company = 'AdventureWorks' and address like '%Paris%'",
+    "Count Orders": "SELECT COUNT(1) FROM orders;",
     "Insert Customer": 
 """INSERT INTO Customers (FirstName, LastName, Address, Company, Email, Phone)
-VALUES ('Ahmed', 'Muzammil', 'Bukit Batok East Avenue 5, Singapore', 
-'Bank of Singapore', 'ahmedmuzammil.jamalmohamed@bankofsingapore.com', '94780611')""",
+VALUES ('Ahmed', 'Muzammil', 'Singapore', 
+'Acme Company Limited', 'ahmedmzl@gmail.com', '94780611')""",
     "Delete Customer": "DELETE FROM customers WHERE customerid = 501;",
     "Order Details (join)":    """select  CustomerName, Address, DatePlaced, DateFilled,
 InvoiceNumber, Colour, StandardCost, ListPrice, ListPrice-StandardCost as Profit
@@ -242,9 +242,10 @@ st.graphviz_chart(r'''
         LineItems [label="{**LineItems**|+ LineItemId: INTEGER\l| - OrderId: INTEGER\l| - ProductId: INTEGER\l| Quantity: INTEGER\l}"];
         Products [label="{**Products**|+ ProductId: INTEGER\l| Colour: VARCHAR\l| DaysToManufacture: INTEGER\l| Description: VARCHAR\l| ListPrice: DECIMAL(10,2)\l| Name: VARCHAR\l| StandardCost: DECIMAL(10,2)\l| Weight: DECIMAL(10,2)\l}"];
 
-        Orders -> Customers [label="CustomerId", taillabel="1", headlabel="*"];
-        LineItems -> Orders [label="OrderId", taillabel="1", headlabel="*"];
-        LineItems -> Products [label="ProductId", taillabel="1", headlabel="*"];
+        Customers -> Orders [label="CustomerId", taillabel="1", headlabel="*"];
+        Orders -> LineItems [label="OrderId", taillabel="1", headlabel="*"];
+        Products -> LineItems [label="ProductId", taillabel="1", headlabel="*"];
+                
     }
 ''')
 
@@ -294,8 +295,13 @@ with col3:
     st.markdown("Combine multiple tables:")
     st.markdown("""- **INNER JOIN:** Selects records that have matching values in both tables.
 - **LEFT JOIN:** Selects all records from the left table, and the matched records from the right table. The result is NULL on the right side if there is no match.
-- **RIGHT JOIN:** Selects all records from the right table, and the matched records from the left table. The result is NULL on the left side if there is no match.
 """)
+    st.markdown('### Adding Comments')
+    st.markdown("Improve code readability and maintenance:")
+    st.markdown("""- **Single-line Comment:** `-- Comment`
+- **Multi-line Comment:** `/* Multi Line 
+                Comments */`""")
+
 
 with col4:
     st.markdown('### Sorting/Ordering **ORDER BY**')
@@ -435,7 +441,7 @@ Let's expand on the filtering data with `WHERE` clause section, providing more d
   ```
 - **Expected Result Definition:** Lists first names that start with "Jo".
 
-### NULL Values: `IS NULL`
+### `NULL` Values: `IS NULL`
 - **Definition:** Finds rows where the column value is NULL.
 - **Syntax:** `SELECT column1 FROM table_name WHERE column1 IS NULL;`
 - **Example Query:** 
@@ -496,7 +502,7 @@ Let's expand on the filtering data with `WHERE` clause section, providing more d
 
 ## Remove Duplicates and Find Unique Values
 
-### DISTINCT
+### `DISTINCT`
 - **Definition:** Returns unique values in the specified column(s).
 - **Syntax:** `SELECT DISTINCT column1 FROM table_name;`
 - **Example Query:** 
@@ -505,7 +511,7 @@ Let's expand on the filtering data with `WHERE` clause section, providing more d
   ```
 - **Expected Result Definition:** Lists all unique order statuses.
 
-### GROUP BY + COUNT + HAVING to find duplicates and their count
+### `GROUP BY + COUNT + HAVING` to find duplicates and their count
 - **Example Query:** 
   ```sql
   SELECT Email, COUNT(*) FROM Customers GROUP BY Email HAVING COUNT(*) > 1;
@@ -514,7 +520,7 @@ Let's expand on the filtering data with `WHERE` clause section, providing more d
 
 ## Different Ways to Join Tables
 
-### INNER JOIN
+### `INNER JOIN`
 - **Definition:** Combines rows from two or more tables based on a related column between them.
 - **Syntax:** `SELECT table1.column, table2.column FROM table1 INNER JOIN table2 ON table1.common_column = table2.common_column;`
 - **Example Query:** 
@@ -523,7 +529,7 @@ Let's expand on the filtering data with `WHERE` clause section, providing more d
   ```
 - **Expected Result Definition:** Shows the first name of customers along with their order IDs.
 
-### LEFT JOIN
+### `LEFT JOIN`
 - **Definition:** Returns all records from the left table, and the matched records from the right table.
 - **Syntax:** `SELECT table1.column, table2.column FROM table1 LEFT JOIN table2 ON table1.common_column = table2.common_column;`
 - **Example Query:** 
@@ -531,11 +537,6 @@ Let's expand on the filtering data with `WHERE` clause section, providing more d
   SELECT Customers.FirstName, Orders.OrderId FROM Customers LEFT JOIN Orders ON Customers.CustomerId = Orders.CustomerId;
   ```
 - **Expected Result Definition:** Lists all customers and their orders if they have any. Customers without orders will still appear, with NULL in the `OrderId` column.
-
-### RIGHT JOIN
-- **Definition:** Returns all records from the right table, and the matched records from the left table.
-- **Syntax:** Similar to LEFT JOIN but with tables reversed.
-- **Example Query:** Not commonly used in practice as LEFT JOIN can usually be rearranged to achieve the same result.
 
 ## Sorting and Ordering data using `ORDER BY`
 - **Definition:** Orders the result set of a query by specified column(s).
@@ -555,7 +556,89 @@ Let's expand on the filtering data with `WHERE` clause section, providing more d
   ```
 - **Expected Result Definition:** Calculates the average price of all products by treating the list prices as a subquery.
 
-Each of these concepts is foundational in SQL and helps in various data manipulation and retrieval operations. By understanding and applying these operations, one can efficiently work with databases to extract and analyze data.
+""")
+st.markdown('---')
+st.markdown('## Additional SQL Concepts - Good To Know')
+st.markdown('### Data Manipulation Functions')
+st.markdown("""
+#### `CONCAT` Function: Concatenates Two or More Strings
+- **Syntax:** `CONCAT(string1, string2, ..., stringN)`
+- **Example:** Combine a customer's first name and last name into a full name.
+  ```sql
+  SELECT CONCAT(FirstName, ' ', LastName) AS FullName FROM Customers;
+  ```
+- **Explanation:** This query creates a new string for each record by combining `FirstName` and `LastName` with a space in between.
+
+#### `ISNULL` Function: Replaces `NULL` with a Specified Value
+- **Syntax:** `ISNULL(expression, replacement)`
+- **Example:** Provide a default text where there's no phone number.
+  ```sql
+  SELECT FirstName, ISNULL(Phone, 'No Phone Provided') AS Phone FROM Customers;
+  ```
+- **Explanation:** If the `Phone` column contains NULL for a record, 'No Phone Provided' is returned instead.
+
+#### `COALESCE` Function: Returns the First Non-NULL Value in the List
+- **Syntax:** `COALESCE(expression1, expression2, ..., expressionN)`
+- **Example:** Get the first available contact detail for a customer.
+  ```sql
+  SELECT FirstName, COALESCE(Email, Phone, 'No Contact Info Available') AS ContactInfo FROM Customers;
+  ```
+- **Explanation:** For each customer, the query returns the first non-null value out of `Email` and `Phone`. If both are NULL, it returns 'No Contact Info Available'.
+
+#### `CASE` Statement: Implements Conditional Logic
+- **Syntax:** 
+  ```sql
+  CASE 
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    ...
+    ELSE default_result
+  END
+  ```
+- **Example:** Categorize products based on their list price.
+  ```sql
+  SELECT Name,
+         CASE 
+           WHEN ListPrice >= 100 THEN 'Expensive'
+           WHEN ListPrice < 100 AND ListPrice > 50 THEN 'Moderate'
+           ELSE 'Cheap'
+         END AS PriceCategory
+  FROM Products;
+  ```
+- **Explanation:** Each product is classified as 'Expensive', 'Moderate', or 'Cheap' based on its `ListPrice`.
+
+#### `CAST` Function: Converts Data Types
+- **Syntax:** `CAST(expression AS data_type(length))`
+- **Example:** Convert the price to an integer type.
+  ```sql
+  SELECT Name, CAST(ListPrice AS INT) AS PriceInteger FROM Products;
+  ```
+- **Explanation:** Converts the `ListPrice` from a decimal or float to an integer.
+
+#### `TRIM` Function: Removes Leading and Trailing Spaces
+- **Syntax:** `TRIM([characters FROM] string)`
+- **Example:** Trim spaces from customer names.
+  ```sql
+  SELECT TRIM(FirstName) AS TrimmedFirstName FROM Customers;
+  ```
+- **Explanation:** Removes any leading or trailing spaces from the `FirstName` values.
+
+#### `UPPER` and `LOWER` Functions: Converts Text to Uppercase or Lowercase
+- **Syntax for UPPER:** `UPPER(string)`
+- **Syntax for LOWER:** `LOWER(string)`
+- **Example:** Convert names to uppercase.
+  ```sql
+  SELECT UPPER(FirstName) AS UpperCaseName FROM Customers;
+  ```
+- **Explanation:** Converts all characters in `FirstName` to uppercase.
+
+#### `ROUND` Function: Rounds a Number to a Specified Number of Decimal Places
+- **Syntax:** `ROUND(number, decimals)`
+- **Example:** Round the list price to 2 decimal places.
+  ```sql
+  SELECT Name, ROUND(ListPrice, 2) AS RoundedPrice FROM Products;
+  ```
+- **Explanation:** Adjusts the `ListPrice` of each product to a number with 2 decimal places.
 """)
 
 if st.checkbox("Admin Panel"):
